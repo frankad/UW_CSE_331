@@ -1,0 +1,15 @@
+Menu:
+	r to find a route
+	b to see a list of all buildings
+	q to quit
+
+Enter an option ('m' to see the menu): # Verify that when two unknown building 
+# is entered by the user to find the path.So, that it will print "Unknown 
+# building" followed by the building abbreviated name. For instance, it will
+# print once "Unknown building:  AA". it will print twice, "Unknown building:"
+# followed by Abbreviated name.
+Abbreviated name of starting building: Abbreviated name of ending building: Unknown building: ABX
+Unknown building: ABY
+
+Enter an option ('m' to see the menu): 
+# terminate the program

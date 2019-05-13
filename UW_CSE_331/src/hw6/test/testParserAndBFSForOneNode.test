@@ -1,0 +1,14 @@
+# test parser and BFS, a case for one node graph using
+# graphWithOneNode dataset.
+
+# build graph
+LoadGraph graphWithOneNode graphWithOneNode.tsv
+
+# test the graph is building process
+ListNodes graphWithOneNode
+ListChildren graphWithOneNode Eva
+ListChildren graphWithOneNode David
+
+# test BFS/findPathBFS
+FindPath graphWithOneNode Eva Eva
+FindPath graphWithOneNode Eva David

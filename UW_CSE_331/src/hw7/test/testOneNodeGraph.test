@@ -1,0 +1,8 @@
+# Test a case creating a graph with only one node.
+
+# Load oneNodeGraph.tsv
+LoadGraph oneNodeGraph oneNodeGraph.tsv
+
+# Print out the list of nodes in this graph and their out going edges for each node
+ListNodes oneNodeGraph
+ListChildren oneNodeGraph Eva

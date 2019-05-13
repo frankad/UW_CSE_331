@@ -1,0 +1,13 @@
+# Find a path with multiple hops from one student to an other students 
+# using studentInCourse full dataset
+
+# build graph
+loaded graph studentInCourse
+
+# test the path
+path from Olivia to Abigal:
+Olivia to Chris via CSE331
+Chris to Sam via EE474
+Sam to Liya via EE448
+Liya to Sophia via MATH390
+Sophia to Abigal via ECON201

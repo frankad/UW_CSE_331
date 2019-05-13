@@ -1,0 +1,23 @@
+# Sample testing: a case list children of node for three node and three edges:
+# It tests to list the children node and edge added to the graph 
+# it can be created from three nodes and edge between them can be added.
+# Then a lsit of node in the graph and children nodes of each node can be
+# printed out.
+
+# Create a graph
+CreateGraph graph1
+
+# Add a pair of nodes
+AddNode graph1 n1
+AddNode graph1 n2
+AddNode graph1 n3
+
+# Add edges
+AddEdge graph1 n1 n2 e1
+AddEdge graph1 n1 n3 e2
+AddEdge graph1 n2 n3 e3
+
+# Print the nodes in the graph and the outgoing edges from n1, n2
+ListNodes graph1
+ListChildren graph1 n1
+ListChildren graph1 n2

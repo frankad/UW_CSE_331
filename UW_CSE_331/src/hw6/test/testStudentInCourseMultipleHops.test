@@ -1,0 +1,8 @@
+# Find a path with multiple hops from one student to an other students 
+# using studentInCourse full dataset
+
+# build graph
+LoadGraph studentInCourse studentInCourse.tsv
+
+# test the path
+FindPath studentInCourse Olivia	Abigal

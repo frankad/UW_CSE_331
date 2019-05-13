@@ -1,0 +1,10 @@
+# Test a case to find path from a graph with one node, oneNodeGraph
+# in other words, this test can cover for the case the path from  a
+# given node to itself.
+
+# Load oneNodeGraph.tsv
+loaded graph oneNodeGraph
+
+# Find the minimum-cost path from node Eva to itself
+ path from Eva to Eva:
+total cost: 0.000

@@ -1,0 +1,10 @@
+# Find a path with multiple hops using the full Marvel dataset.
+
+# build graph
+loaded graph marvel
+
+# test the findPathBFS
+path from GORILLA-MAN to MOJO:
+GORILLA-MAN to 3-D MAN/CHARLES CHAN via AVF 4 
+3-D MAN/CHARLES CHAN to ANGEL/WARREN KENNETH via COC 1
+ANGEL/WARREN KENNETH to MOJO via M/CP 89/4

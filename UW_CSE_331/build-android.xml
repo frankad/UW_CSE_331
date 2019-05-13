@@ -1,0 +1,54 @@
+<project default="build-jar">
+
+  <target name="clean">
+    <echo message=""/>
+    <echo message="*** DELETING OLD CLASS FILES ***"/>
+    <echo message=""/>
+    <exec dir="src/hw5" executable="ant" failonerror="true">
+      <arg value="clean"/>
+    </exec>
+    <exec dir="src/hw6" executable="ant" failonerror="true">
+      <arg value="clean"/>
+    </exec>
+    <exec dir="src/hw7" executable="ant" failonerror="true">
+      <arg value="clean"/>
+    </exec>
+    <exec dir="src/hw8" executable="ant" failonerror="true">
+      <arg value="clean"/>
+    </exec>
+  </target>
+
+  <target name="build">
+    <echo message=""/>
+    <echo message="*** REBUILDING CLASS FILES WITH JAVA 7 ***"/>
+    <echo message=""/>
+    <exec dir="src/hw5" executable="ant" failonerror="true">
+      <arg value="build"/>
+      <arg value="-Dcompiler.args=-source 1.7 -target 1.7"/>
+    </exec>
+    <exec dir="src/hw6" executable="ant" failonerror="true">
+      <arg value="build"/>
+      <arg value="-Dcompiler.args=-source 1.7 -target 1.7"/>
+    </exec>
+    <exec dir="src/hw7" executable="ant" failonerror="true">
+      <arg value="build"/>
+      <arg value="-Dcompiler.args=-source 1.7 -target 1.7"/>
+    </exec>
+    <exec dir="src/hw8" executable="ant" failonerror="true">
+      <arg value="build"/>
+      <arg value="-Dcompiler.args=-source 1.7 -target 1.7"/>
+    </exec>
+  </target>
+
+  <target name="build-jar">
+    <echo message=""/>
+    <echo message="*** CREATING JAR of HW5-8 ***"/>
+    <echo message=""/>
+    <jar destfile="cse331-hws.jar">
+      <fileset dir="bin" includes="hw5/*.class"/>
+      <fileset dir="bin" includes="hw6/*.class"/>
+      <fileset dir="bin" includes="hw7/*.class"/>
+      <fileset dir="bin" includes="hw8/*.class"/>
+    </jar>
+  </target>
+</project>

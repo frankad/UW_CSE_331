@@ -1,0 +1,8 @@
+# Find a minimum cost path with multiple hops from one student to an other students 
+# using studentInCourse dataset, in this case no path beween two students.
+
+# build graph
+LoadGraph studentInCourse studentInCourse.tsv
+
+# test the findMinimumCostPath
+FindPath studentInCourse Jeff Emily

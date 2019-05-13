@@ -1,0 +1,11 @@
+# Verify that when unknown starting building
+# is entered by the user to find the path.So, that it will print "Unknown 
+# building" followed by the building abbreviated name of the starting
+# building. It will print "Unknown building: AA". AA is Abbreviated name
+# of starting building.
+r
+ABX
+PAB
+
+# terminate the program
+q

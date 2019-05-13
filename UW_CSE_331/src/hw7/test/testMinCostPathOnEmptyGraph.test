@@ -1,0 +1,11 @@
+# Tests a graph created without nodes or simply an empty graph.
+
+# Load emptyGraph.tsv
+LoadGraph emptyGraph emptyGraph.tsv
+
+# Print the list of nodes in the graph, emptyGraph
+ListNodes emptyGraph
+
+# find the minimum cost path between some random nodes that are not exist in
+# the given empty graph.
+FindPath emptyGraph Eva John

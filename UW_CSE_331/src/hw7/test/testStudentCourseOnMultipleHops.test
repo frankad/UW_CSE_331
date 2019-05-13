@@ -1,0 +1,9 @@
+# Test for a case to find the minimum cost path with multiple hops or differnt
+# possible options to move from the start to destination node using the full
+# studentInCourse dataset.
+
+# build graph
+LoadGraph studentInCourse studentInCourse.tsv
+
+# test to find the minimum cost path, findMinimumCostPath
+FindPath studentInCourse Olivia	Abigal

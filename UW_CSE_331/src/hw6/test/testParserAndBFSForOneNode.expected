@@ -1,0 +1,14 @@
+# test parser and BFS, a case for one node graph using
+# graphWithOneNode dataset.
+
+# build graph
+loaded graph graphWithOneNode
+
+# test the graph is building process
+graphWithOneNode contains: Eva
+the children of Eva in graphWithOneNode are:
+the children of David in graphWithOneNode are: node David is not found in the graph
+
+# test BFS/findPathBFS
+path from Eva to Eva:
+unknown character David

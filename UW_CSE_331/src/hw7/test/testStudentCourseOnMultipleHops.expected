@@ -1,0 +1,15 @@
+# Test for a case to find the minimum cost path with multiple hops or differnt
+# possible options to move from the start to destination node using the full
+# studentInCourse dataset.
+
+# build graph
+loaded graph studentInCourse
+
+# test to find the minimum cost path, findMinimumCostPath
+path from Olivia to Abigal:
+Olivia to Chris with weight 1.000
+Chris to Sam with weight 1.000
+Sam to Liya with weight 1.000
+Liya to Sophia with weight 1.000
+Sophia to Abigal with weight 1.000
+total cost: 5.000

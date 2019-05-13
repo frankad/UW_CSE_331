@@ -1,0 +1,9 @@
+# Test a case to find path using oneNodeGraph from the node that exist inside
+# the graph to some not existing nodes say, Jeff and David
+
+# Load oneNodeGraph.tsv
+LoadGraph oneNodeGraph oneNodeGraph.tsv
+
+# Find the minimum-cost path from  existing(Eva) to non-existing(Jeff or David) node and vice versa
+FindPath oneNodeGraph Eva Jeff
+FindPath oneNodeGraph David Eva 

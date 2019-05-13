@@ -1,0 +1,11 @@
+# Verify that when unknown ending building
+# is entered by the user to find the path.So, that it will print "Unknown 
+# building" followed by the building abbreviated name of the ending
+# building. It will print "Unknown building: AA". AA is Abbreviated name
+# of ending building.
+r
+PAB
+ABY
+
+# terminate the program
+q

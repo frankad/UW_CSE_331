@@ -1,0 +1,49 @@
+CSE 331 Homework 3.  Answers to Written questions.
+Edit this file to supply your answers.
+
+Name:  Fentahun Reta
+
+Problem 6.
+
+(a)
+  In Fibonacci sequence is a series of numbers are found by adding up the two numbers before it.
+  For instance starting with 0 and 1, we can get 0,1,1,2,3...
+  Fibonacci fail the testThrowsIllegalArgumentException test, because it included 0 index or considered as negative number. 
+  Thus, since the first index of the desired sequence is 0, the function should not throw exceptions when
+  n is 0. So, it shoudl throw IllegalArgumentException when n is negative (n<0).
+
+(b)
+ Fibonacci was failed for the base case test, because the base case test included index 2. However, for the base case the 
+ index should be 0 and 1, because our first index is 0. The base case is (n<=1) or n = 0 and n=1. It should not include the
+ index n=2.
+
+(c)
+  Fibonacci fail the inductive test case test, because the the inductive case was assuming the next Fibonacci number is 
+  the difference of the two prevuous numbers. However, the next Fibonacci number is the sum of the previous 2 Fibonacci number.
+  Thus, the negative sigh (-) should be changed to plus sign (+), getFibTerm(n - 1) + getFibTerm(n - 2). 
+
+Problem 7. 
+(a) 
+  (i) In the constructor, the parameter (volume) assign to to the formal parameter itself. However, we have to use
+      the key word this, which is a reference to the current ball object instead of assigning the formal
+      parameter passed in to the instance variable. Thus, when the ball object is constructed using
+      with a specified volume, I changed to use this.volume=volume instead. The volume of this object is just volume. 
+   
+   (ii) The instance variable volume is never used and the getVolume always returns 0. The getVolume method should return
+        the volume of the ball object (the value that stored in volume). So, I changed the getVolume() method to
+        return the value stored in the varibale volume. 
+(b) Looping through all the balls in the ballContainer and adding up the volumes every time is not efficent. Keep 
+   tacking the volume while we add and remove the ball is better. Because if we have large set of ball it takes longer
+   time to get the total volume. It would be O(n), where n number of ball in the container. However, if we keep tack 
+   the total volume while we add and remove a ball from the container it will be computationally efficients and would 
+   be much faster.  
+ (c)
+   (1) I used Comparator to compare two compare the two balls and to order the ball objects internally. First, I creat a comparator 
+   object and I used an arraylist to store the ball objects from the ballcontainer.Then I used sort method from java collection 
+   library to sort the ball object based on the comparator parameter passed in to it. Then the iterator returns all the balls in
+   this box in ascending size. The second option what I tried was  Treeset. So, the TreeSet with comparator object to compare the
+   ball and getBallsFromSmallest because TreeSet in Java library has iterator method. It can return an iterator of the elements 
+   in the given set in ascending order based on the  provided comparator. However, I suspect set might remove if there is any 
+   duplicate values.
+   (2) I am thinking that getBallsFromSmallest might not used and called frequently like other method that modifies the BallContainer 
+       Proably if we are guarantee no duplication of values(volume) the second method is better.

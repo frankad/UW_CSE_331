@@ -1,0 +1,11 @@
+# Garage building GB to Parking building PC
+2.0,2.0
+	2.0,6.0:	4.0
+	5.0,6.0:	5.0
+# Parking building PC to Market building MB
+2.0,6.0
+	2.0,2.0:	4.0
+	5.0,6.0:	3.0
+# Market building MB to Parking building PC
+5.0,6.0
+	2.0,2.0:	5.0

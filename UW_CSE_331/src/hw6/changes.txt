@@ -1,0 +1,19 @@
+CSE 331 Homework 6.  Answers to Written questions.
+Edit this file to supply your answers.
+
+Name:  <Fentahun Reta>
+
+Briefly describe any changes made to your Graph ADT from HW5 and why 
+those changes were made below.  (See the HW6 assignment for details.)
+
+  I changed made in hw5/DirectGraph
+
+1. I changed the method getAllNodes(). Originally i used collection AddAll methods. However, it makes slow 
+  the process/excusion time.So, instead return immidately an object like, new TreeSet<T>(directGraph.keySet()). 
+
+2. Originally, I used checkRep() in some of my methods such as addEdge, edgesOfNode, removeEdge, checkEdgeExist,
+ and getChildren. However, it made the run time very slow. Thus, when chechRep() call in those method, it goes 
+ all the way to check the graph and every node in the graph from the begining. Thus, due to this complexities of  
+ various operations increase the runtime. So, when I removed it after I got advice from TA's, it work properly and
+ the run time decreased half.
+

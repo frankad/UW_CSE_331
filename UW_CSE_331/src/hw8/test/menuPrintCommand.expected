@@ -1,0 +1,14 @@
+Menu:
+	r to find a route
+	b to see a list of all buildings
+	q to quit
+
+Enter an option ('m' to see the menu): # Verify the print output option displayed by the
+# menu command. It display the option on the menu when m is choosen.
+Menu:
+	r to find a route
+	b to see a list of all buildings
+	q to quit
+
+Enter an option ('m' to see the menu): 
+# terminate the program

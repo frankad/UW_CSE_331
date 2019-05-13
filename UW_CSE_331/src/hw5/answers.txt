@@ -1,0 +1,127 @@
+CSE 331 Homework 5.  Answers to Written questions.
+Edit this file to supply your answers.
+
+Name:  <Fentahun Reta>
+
+Problem 1. (Written exercises)
+
+(a)
+IntQueue1:
+Representation Invariant:  
+    entries!=null && for all i such that (0 <= i<entries.size(), entries.get(i)!= null)
+
+Abstraction Function(AF):
+     AF(this) = Queue<Integer> such that 
+     entries = [] if there are no elements in the queue or entries.
+     entries = [n1, n2, ..., n_k] where k is the number of elements in the entries or queue  
+     element added first into entries is the first to be removed, and n_k is the most-recently-added element
+      and will be removed last from current elements.      
+
+IntQueue2:
+Representation Invariant:
+    entries != null
+	size >=0 && front >=0 && front <= entries.length-1;
+
+Abstraction function(AF):
+    AF(this)  = Queue<Integer> such that 
+    entries = [n1, n2, ..., n_k], such that front = i, size = m 
+    queue = []         if size == 0
+    queue = [n_(i+1), ..., n_(i+m)]   if (front + size) <= entries.length,    where entries.length is the # of element in entries.
+    queue = [n_(i+1), ..., n_k, n1, ..., n_(k-i)]  if (front + size) <= entries.length
+
+(b)
+  Let's first put the number as actual value for each queue by considering the front position and the given size.
+  a = [1, 2]           b = [2, 3, 4]             c = [1, 2, 3]
+  d = [1, 2]           e = [1, 2, 3, 4]          f = [1, 2, 3]
+  g = [1, 2]           h = [2, 3, 4] 
+  There fore, a, d and g are equivalent.
+              b and h are equivalent.
+			  c and f are equivalent.
+  But, e does not equivalent to any one of them. 
+
+(c)
+  1. It does not expose the representation. Because it takes a parameters of primitive data type and also return a 
+     primitive data type instead of mutable objects. 
+  2. It has representation exposure because the return type is an array of string which is mutable. 
+  3. It has representation exposure For instance, if we assume the Date is mutable and the returned Date is not 
+     a copy of the original Date, then it will have representaion exposure.
+  4. It does not have representation exposure because the return type is immutable string.
+  5. If the iterator support remove method, the clients can remove elements from the collection when iterating through
+     the collection. Thus, in that case the method will have represntation exposure.
+  6. If the Deck is mutable and the method does not make a copy of the original Deck, it will have a representation exposure 
+     because the clients can modified the Deck. So, the method need to copy the argument firs to avoid exposure.
+
+
+Problem 2.  (Graph interface/operations) 
+
+ I have two classes, such as a DirectGraph and GraphEdges. The clase DirecGraph makes the graph.
+ The graph DirectGraph is implemented as a Map, Map<T, Set<GraphEdges<T,E>>> directGraph. It
+ has the starting node as a key and a set of GraphEdges as a value. That means a given starting
+ node can reach to multiple destination node, and each destination node associated with the edge
+ lable that connect with the satrting node placed inside the set. The class GraphEdge represents the 
+ the destination/end node and the edge lable that outgoing from some staring node. Thus, It reprsentsb by
+ combining the destination node and the edge label.
+
+ ---------// why I include each method or operation ? -----------------
+ DirectGraph()           -> A directed graph is created as empty object, because I need to create an empty graph
+ addNode(String vertex)    -> This method included because I need to add a node to form a graph. 
+ addEdge(String start, String end, String edge)  -> I need this method to add an edge that connect the starting node (start) to 
+			 the ending (end) node to form a graph. So, it forms connection between node to form graph.
+ removeNode(String node)     -> This method used to remove a node if the node is not required any more inside the graph
+ removeEdge(String start, String end, String edge)   -> I included this method inorder to remove an edge that connect one node (start) 
+		                     to the other node(end) if the connection is not required between the two nodes.
+ checkEdgeExist(String start, String end)	 -> In order to check if there is an edge that connects the given nodes, and it can help to 
+                                    check if already there is a connection between nodes. It helps to check relation between nodes.
+ containsNode (String node)  -> this helps to check if the given node is inside the graph or not. So, it can help  to check whether
+                          the node is in th graph or not before we add a node or to add an edge from this node to some other node. 
+ getAllNodes()		-> it give us the set of nodes. So, it can help to find the size of the graph or all list of all nodes. .
+ edgesOfNode(T nd)		-> it helps to find all the edges associated with the given node, and to know the connection of given node
+							 with other nodes.
+ edgeLablesFromStart(T start, T end)	-> to know all the possible edges or path from the given start node to the end node, and to 
+							   find number of routes between two nodes
+ getChildren(T start)	     -> to find all list of the child nodes from the given parent (node).
+ size()						 -> to find the size of the graph 
+ isEmpty()					 -> to check whether the given graph is empty or not
+ toString()					 -> to view the string representation of the graph
+ checkRep()					 -> Check if the represenation of the invariant holds  
+
+For the class Graph edges
+GraphEdges()   --> constructor, to create an empty object of End node associated with edge lable
+getEndNode()  --> to get the end node
+getEdgeLable()  --> to acces the edge lable associated with the end node
+equal()  --> to comapare GraphEdges object with other object
+compareTo()  --> to compare two GraphObjects and make some order arrangemnet based on alphabetical ASCI order
+hashCode()   --> to compare the hash value of two GraphEdges object.
+
+Problem 3.  (Testing strategy)
+   Testing strategy, I will test different graph cases, such as empty graph, graph with one node, a 
+   graph with one node and edges that points to itself, a graphs with two or more nodes and edges etc.
+   I will test duplicated edge lable case between the same node, the children of the given nodes, test 
+   whether there is an edge between nodes or not, check if the graph has some given node or not.  
+   Thus, the test consider  many cases from empty graphs to more complex graphs by considering
+   different scenarios. Each method need be tested from differnt perspective.
+   
+   compared to the first plan I removed some test as well as I added some additional tests. I removed some methods
+   such as the toal number of edges in the graph, parent nodes, and list of edges or lables. Thus, the test case that 
+   I was considerd for the corresponding methods are also removed. However, I include other test cases that check/handle
+   when the multiple duplicated edge label added between the same nodes.
+   
+   Thus based on the above plan, tested my implementation and each method.I tested by making  different graphs 
+   to test each method by considering different cases.
+
+Problem 4.  (Representation) 
+ 
+ I used Map<String, Set<GraphEdges<String,String>> to represent the graph. Because Map has a convenient feature to 
+ add nodes and to create a relation between the starting node and the destination nodes associated with edges as key
+ and value relationship respectively. Moreover, it easy to use add (put) and remove operations. Thus, the map can be
+ used to keep track all the nodes that has children associated with the edge label between the starting and end node.
+ I used a set to represent the class GraphEdges, it represents the destination node and the associated edge label 
+ while we move from some starting node. Since set does not allow duplicated values, so, we might not worry about 
+ duplicated edge labels between the same nodes. I used string to represent the node and each node has its own name. 
+ For the set, another String node as key, this represents end point of the edge when it start from start node, which
+ map to the edge label. 
+ Thus, the advantage of using collection of edges because it is to implement, add, remove, and access elements or to
+ traverse nodes and edges. So, in terms of time complexity it is constant time to add, remove, and access elements 
+ from collection.
+ 
+

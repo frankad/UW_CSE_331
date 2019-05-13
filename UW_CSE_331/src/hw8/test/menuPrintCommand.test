@@ -1,0 +1,6 @@
+# Verify the print output option displayed by the
+# menu command. It display the option on the menu when m is choosen.
+m
+
+# terminate the program
+q

@@ -1,0 +1,28 @@
+CSE 331 Homework 8.  Answers to Written questions.
+Edit this file to supply your answers.
+
+Name:  <Fentahun Reta>
+
+Describe which parts of your code belong to the model, the view,
+the controller, or none of these.  (See the assignment for details.)
+
+Note:I added a new method eqauls and hasCode on hw5/DierctGraph.java class. 
+	Because some of the JUnit test of pathDataParser in the CampusDataParserTest.java
+	was failed. So, after I added those methods and used trim() in the string 
+	representation of DierctGraph to remove extera spaces then everything is fixed.   
+	
+The model classes are: CampusDataParser.java, PathFindingModel, and PointCoordinate.java.
+So, the CampusDataParser class load the campus buildings and campus paths dataset; the 
+PointCoordinate class represents basically the 2D point class that model the building
+location and rectangular coordinates.PathFindingModel has contain most of the logical
+and computation process to find the shoretest path, to get the building namess, location
+and coordinates. Thus as a model they have the state of the obiect, can accepts a command 
+and change states. 
+
+The view and controller class is PathFindingControllerView. As the name indicate view and 
+controler method implemented together. It represents the visualization of the data that 
+the model classes contain, and also controls the data flow into model object and updates 
+the view whenever data changes. The method implemented in this class, such as listBuildings
+shortestRoute display information to the user. On the other hand, the main method used as 
+a controller because it accepts the input data from the user, and also act as a view when 
+the user display/print some information, it calls the print command which are view. 

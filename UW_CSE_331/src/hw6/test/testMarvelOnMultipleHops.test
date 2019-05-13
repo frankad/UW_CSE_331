@@ -1,0 +1,7 @@
+# Find a path with multiple hops using the full Marvel dataset.
+
+# build graph
+LoadGraph marvel marvel.tsv
+
+# test the findPathBFS
+FindPath marvel GORILLA-MAN MOJO

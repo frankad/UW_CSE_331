@@ -1,0 +1,8 @@
+# Find a path with multiple hops from one student to an other students 
+# using studentInCourse dataset, a case no path beween two students.
+
+# build graph
+LoadGraph studentInCourse studentInCourse.tsv
+
+# test the findPathBFS
+FindPath studentInCourse Jeff Emily

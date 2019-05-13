@@ -1,0 +1,28 @@
+# Test a case list of nodes in the graph and list of children of the parent node. It also
+# tests when multiple edges added beween two nodes. So, it prints list of nodes in the graph
+# and the children of parent nodes in order way. It also test when there are two or more 
+# edges/routes between two nodes. The abbreviations are UW buildings.
+# Create a graph
+created graph graph1
+
+# Add nodes 
+added node HUB to graph1
+added node MGH to graph1
+added node GUG to graph1
+added node MOR to graph1
+
+# Add edges between nodes
+added edge 1.800 from HUB to MGH in graph1
+added edge 1.500 from HUB to MGH in graph1
+added edge 1.250 from HUB to MOR in graph1
+added edge 1.300 from MGH to GUG in graph1
+added edge 1.500 from MGH to GUG in graph1
+added edge 1.650 from GUG to MOR in graph1
+added edge 1.900 from MOR to GUG in graph1
+
+# List the nodes in the graph
+graph1 contains: GUG HUB MGH MOR
+the children of HUB in graph1 are: MGH(1.500) MGH(1.800) MOR(1.250) 
+the children of MGH in graph1 are: GUG(1.300) GUG(1.500)
+the children of GUG in graph1 are: MOR(1.650)
+the children of MOR in graph1 are: GUG(1.900)
